@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
-        sessions: 'users/sessions'
+        sessions: 'user/sessions'
       }
 
-  devise_for :admins
+  devise_for :admins, controllers: {
+    sessions: 'admin/sessions'
+  }
+  
   get 'pages/home'
   get 'pages/users'
   get 'pages/admin'
